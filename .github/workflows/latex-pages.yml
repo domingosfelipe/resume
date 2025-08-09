@@ -1,0 +1,58 @@
+name: Build LaTeX & Deploy PDF to Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "**.tex"
+      - "**.cls"
+      - "**.bib"
+      - ".github/workflows/latex-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: FelipeDomingos_EN-US.tex,FelipeDomingos_PT-BR.tex
+      - name: Prepare site
+        run: |
+          mkdir -p public
+          cp FelipeDomingos_EN-US.pdf public/FelipeDomingos_EN-US.pdf
+          cp FelipeDomingos_PT-BR.pdf public/FelipeDomingos_PT-BR.pdf
+          cat > public/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Currículos</title>
+          <h1>Downloads</h1>
+          <ul>
+            <li><a href="FelipeDomingos_EN-US.pdf">en-us.pdf</a></li>
+            <li><a href="FelipeDomingos_PT-BR.pdf">pt-br.pdf</a></li>
+          </ul>
+          HTML
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

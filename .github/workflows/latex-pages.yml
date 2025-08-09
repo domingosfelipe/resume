@@ -51,7 +51,7 @@ jobs:
           cp og.png public/og.png
           cp og-pt.png public/og-pt.png || true
           BUILD_DATE="$(date -u '+%Y-%m-%d %H:%M UTC')"
-          cat > public/index.html <<'HTML'
+          cat > public/index.html <<HTML
           <!doctype html>
           <meta charset="utf-8">
           <title>Felipe Domingos - Resumes</title>

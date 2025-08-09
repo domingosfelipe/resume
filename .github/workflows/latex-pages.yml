@@ -30,16 +30,36 @@ jobs:
           root_file: |
             FelipeDomingos_EN-US.tex
             FelipeDomingos_PT-BR.tex
+      - name: Install PDF tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Generate thumbnails
+        run: |
+          pdftoppm FelipeDomingos_EN-US.pdf og -png -f 1 -singlefile -scale-to 1200
+          pdftoppm FelipeDomingos_PT-BR.pdf og-pt -png -f 1 -singlefile -scale-to 1200
       - name: Prepare site
         run: |
           mkdir -p public
           cp FelipeDomingos_EN-US.pdf public/FelipeDomingos_EN-US.pdf
           cp FelipeDomingos_PT-BR.pdf public/FelipeDomingos_PT-BR.pdf
+          cp og.png public/og.png
+          cp og-pt.png public/og-pt.png || true
           cat > public/index.html <<'HTML'
           <!doctype html>
           <meta charset="utf-8">
-          <title>Currículos</title>
-          <h1>Downloads</h1>
+          <title>Felipe Domingos - Resumes</title>
+          <!-- Open Graph -->
+          <meta property="og:title" content="Felipe Domingos - Resumes">
+          <meta property="og:description" content="EN-US and PT-BR resumes (PDF), built with LaTeX.">
+          <meta property="og:type" content="website">
+          <meta property="og:image" content="og.png">
+          <meta property="og:image:type" content="image/png">
+          <meta property="og:image:alt" content="Thumbnail of the EN-US resume PDF">
+          <!-- Twitter Card -->
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="Felipe Domingos - Resumes">
+          <meta name="twitter:description" content="EN-US and PT-BR resumes (PDF), built with LaTeX.">
+          <meta name="twitter:image" content="og.png">
+          <h1>Available Downloads</h1>
           <ul>
             <li><a href="FelipeDomingos_EN-US.pdf">en-us.pdf</a></li>
             <li><a href="FelipeDomingos_PT-BR.pdf">pt-br.pdf</a></li>

@@ -27,7 +27,9 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: FelipeDomingos_EN-US.tex,FelipeDomingos_PT-BR.tex
+          root_file: |
+            FelipeDomingos_EN-US.tex
+            FelipeDomingos_PT-BR.tex
       - name: Prepare site
         run: |
           mkdir -p public

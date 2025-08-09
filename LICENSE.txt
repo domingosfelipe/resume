@@ -1,0 +1,1 @@
+This repository’s LaTeX sources are personal. You may use the structure as inspiration, but do not reuse personal information without permission.

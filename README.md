@@ -3,6 +3,8 @@ Two LaTeX resume versions with automatic build and publication via **GitHub Acti
 
 [![Build LaTeX & Deploy PDF to Pages](https://github.com/domingosfelipe/resume/actions/workflows/latex-pages.yml/badge.svg)](https://github.com/domingosfelipe/resume/actions/workflows/latex-pages.yml)
 
+[![Artifact Attested](https://img.shields.io/badge/artifacts-attested-brightgreen?logo=github)](https://github.com/domingosfelipe/resume#artifact-attestation)
+
 ---
 ## Live PDFs
 - **EN-US**: https://domingosfelipe.github.io/resume/FelipeDomingos_EN-US.pdf  

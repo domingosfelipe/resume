@@ -46,38 +46,22 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p public
+          
           cp FelipeDomingos_EN-US.pdf public/FelipeDomingos_EN-US.pdf
           cp FelipeDomingos_PT-BR.pdf public/FelipeDomingos_PT-BR.pdf
           cp og.png public/og.png
           cp og-pt.png public/og-pt.png || true
+          cp index.html public/index.html
+
           BUILD_DATE="$(date -u '+%Y-%m-%d %H:%M UTC')"
-          cat > public/index.html <<HTML
-          <!doctype html>
-          <meta charset="utf-8">
-          <title>Felipe Domingos - Resumes</title>
-          <!-- Open Graph -->
-          <meta property="og:title" content="Felipe Domingos - Resumes">
-          <meta property="og:description" content="EN-US and PT-BR resumes (PDF), built with LaTeX.">
-          <meta property="og:type" content="website">
-          <meta property="og:image" content="og.png">
-          <meta property="og:image:type" content="image/png">
-          <meta property="og:image:alt" content="Thumbnail of the EN-US resume PDF">
-          <!-- Twitter Card -->
-          <meta name="twitter:card" content="summary_large_image">
-          <meta name="twitter:title" content="Felipe Domingos - Resumes">
-          <meta name="twitter:description" content="EN-US and PT-BR resumes (PDF), built with LaTeX.">
-          <meta name="twitter:image" content="og.png">
-          <h1>Available Downloads</h1>
-          <ul>
-            <li><a href="FelipeDomingos_EN-US.pdf">en-us.pdf</a>(Last update: ${BUILD_DATE})</li>
-            <li><a href="FelipeDomingos_PT-BR.pdf">pt-br.pdf</a>(Last update: ${BUILD_DATE})</li>
-          </ul>
-          HTML
-          # Set og:image and twitter:image meta tags to absolute URL based on GitHub Pages deployment
+          sed -i "s|<!--DATE-->|${BUILD_DATE}|g" public/index.html || true
+          sed -i "s|__BUILD_DATE__|${BUILD_DATE}|g" public/index.html || true
+          
           OWNER="${{ github.repository_owner }}"
           REPO="${{ github.event.repository.name }}"
-          URL="https://${OWNER}.github.io/${REPO}/og.png"
-          sed -i "s|content=\"og.png\"|content=\"${URL}\"|g" public/index.html
+          ABS_OG="https://${OWNER}.github.io/${REPO}/og.png"
+          sed -i "s|content=\"og.png\"|content=\"${ABS_OG}\"|g" public/index.html || true
+          sed -i "s|twitter:image\" content=\"og.png\"|twitter:image\" content=\"${ABS_OG}\"|g" public/index.html || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

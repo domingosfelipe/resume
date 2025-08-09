@@ -49,9 +49,28 @@ pdflatex FelipeDomingos_PT-BR.tex
 > [!NOTE]
 > If your documents use Unicode fonts or languages with accents, consider XeLaTeX: latexmk -xelatex FelipeDomingos_PT-BR.tex
 
+
+## Artifact Attestation
+The generated PDFs are automatically attested using [GitHub Artifact Attestations](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#artifact-attestations).
+
+This means each PDF has a verifiable **SLSA provenance** proving it was built by this repository's GitHub Actions workflow.
+
+### How to verify
+You can verify the attestation locally with the [GitHub CLI](https://cli.github.com/) (v2.51+):
+```bash
+# Verify the EN-US resume
+gh attestation verify \
+  --repo domingosfelipe/resume \
+  --subject-path FelipeDomingos_EN-US.pdf
+# Verify the PT-BR resume
+gh attestation verify \
+  --repo domingosfelipe/resume \
+  --subject-path FelipeDomingos_PT-BR.pdf
+```  
+
 ## Troubleshooting
 - 404 on actions/deploy-pages@v4
-  - Ensure Settings → Pages → Source = GitHub Actions and Workflow permissions = Read and write.
+  - Ensure Settings -> Pages -> Source = GitHub Actions and Workflow permissions = Read and write.
 - "File cannot be found" during compile
   - Verify exact filenames (case-sensitive) and that they are at the repository root.
   - List multiple root files one per line:

@@ -1,8 +1,7 @@
 # Resume
 Two LaTeX resume versions with automatic build and publication via **GitHub Actions** and **GitHub Pages**, using a **static HTML site** for presentation.
 
-[![Pipeline Status](https://img.shields.io/github/actions/workflow/status/domingosfelipe/resume/latex-pages.yml?label=pipeline)](https://github.com/domingosfelipe/resume/actions/workflows/latex-pages.yml)
-[![Artifact Attested](https://img.shields.io/badge/artifacts-attested-brightgreen?logo=github)](https://github.com/domingosfelipe/resume#artifact-attestation)
+[![pipeline](https://img.shields.io/github/actions/workflow/status/domingosfelipe/resume/latex-pages.yml?label=pipeline&logo=github)](https://github.com/domingosfelipe/resume/actions/workflows/latex-pages.yml) [![artifacts](https://img.shields.io/badge/artifacts-attested-brightgreen?logo=github)](https://github.com/domingosfelipe/resume#artifact-attestation)
 
 ---
 ## Live PDFs

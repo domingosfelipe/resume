@@ -4,7 +4,12 @@
 Two LaTeX resume versions with automatic build and publication via **GitHub Actions** and **GitHub Pages**, using a **static HTML site** for presentation.
 
 ---
-## Live PDFs
+## Contents
+
+### GitHub Page
+- **Page**: https://domingosfelipe.github.io/resume
+
+### Live PDFs
 - **EN-US**: https://domingosfelipe.github.io/resume/FelipeDomingos_EN-US.pdf  
 - **PT-BR**: https://domingosfelipe.github.io/resume/FelipeDomingos_PT-BR.pdf  
 

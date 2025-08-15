@@ -2,89 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Resumes — Felipe Domingos</title>
+  <title>Felipe Domingos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
   <!-- Open Graph -->
-  <meta property="og:title" content="Resumes — Felipe Domingos">
-  <meta property="og:description" content="EN-US and PT-BR resumes (PDF), built with LaTeX.">
+  <meta property="og:title" content="Felipe Domingos">
+  <meta property="og:description" content="EN-US and PT-BR Resumes (PDF), built with LaTeX.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="og.png">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Thumbnail of the EN-US resume PDF">
+  <meta property="og:image:alt" content="Thumbnail of the EN-US Resumes PDF">
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Resumes — Felipe Domingos">
-  <meta name="twitter:description" content="EN-US and PT-BR resumes (PDF), built with LaTeX.">
+  <meta name="twitter:title" content="Felipe Domingos">
+	<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="EN-US and PT-BR Resumes (PDF), built with LaTeX.">
   <meta name="twitter:image" content="og.png">
+	<meta property="twitter:image:type" content="image/png">
+	<!-- Style -->
   <style>
-		* { font-family: monospace; font-size: 12px; }
-    body { max-width: 800px; margin: 2rem auto; padding: 0 1rem;}
-    h1 { margin-bottom: 0.5rem; }
-    ul { list-style: inside; padding: 0; }
-    li { margin-bottom: 0.5rem; }
-    .info { color: #555; font-size: 10px; font-style: italic;}
-		.left { text-align: left; }
-    .right { text-align: right; }
+    * { box-sizing: border-box; }
+		html { font-size: 12px; }
+    html, body { height: 100%; }
+    body { background: #f6f6ef; color: #000; font-family: system-ui; font-size: 1rem; line-height: 1.4; margin: 0; }
+    a { color: #000; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hn-topbar { background: #000; color: #fff; padding: 6px 8px; border-bottom: 1px solid #000; }
+    .hn-topbar .hn-logo { display: inline-block; width: 1.8rem; height: 1.8rem; margin-right: 6px; vertical-align: middle; background: url('favicon.ico') no-repeat center/cover; border: 1px solid #fff; }
+    .hn-topbar .hn-title { font-weight: bold; vertical-align: middle; }
+    .hn-topbar .hn-nav { float: right; color: #fff; }
+    .hn-topbar .hn-nav a { color: #fff; }
+    .hn-frame { max-width: clamp(320px, 92vw, 1000px); margin: 10px auto; background: #f6f6ef; border: 1px solid #000; }
+    .hn-container { background: #f6f6ef; padding: 8px; margin: 0; border: none; }
+    .hn-list { list-style: disc; padding-left: 1.5rem; margin: 8px 0 16px; }
+    .hn-list li { margin: 8px 0 16px; }
+    .hn-list .meta { display: block; margin-left: 0; padding-left: 0; }
+    .info { color: #828282; font-size: 0.8rem; font-style: normal; }
+    .lang-links { font-size: 0.9rem; vertical-align: middle; margin-right: 25px; }
+		.lang-links a:hover { text-decoration: none; color: #000; background-color: #fff; padding: 2px 4px; border-radius: 3px; }
+		.lang-links a { margin: 0 4px; }
+		.fi { margin-right: 4px; }
+    footer { text-align: center; font-size: 0.8rem; color: #828282; margin: 10px 0; }
+    @media ( max-width: 600px ) { .hn-frame { margin: 6px auto; } .hn-container { padding: 6px; } }
   </style>
 </head>
 <body>
-  <div id="lang-switcher" class="right" style="margin-bottom: 1rem;">
-    <button type="button" data-set-lang="en" aria-label="English language">English</button>
-    <button type="button" data-set-lang="pt" aria-label="Portuguese language">Portuguese</button>
+  <div class="hn-frame">
+    <div class="hn-topbar">
+      <span class="hn-logo" aria-hidden="true"></span>
+      <span class="hn-title">Felipe Domingos</span>
+      <span class="hn-nav lang-links">
+        <a href="#" data-set-lang="en" aria-label="English" title="Use English language">
+					<span class="fi fi-us"></span> en-us
+				</a> 
+				<a href="#" data-set-lang="pt" aria-label="Portuguese" title="Use Portuguese language">
+					<span class="fi fi-br"></span> pt-br
+				</a>
+      </span>
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="hn-container">
+      <ol class="hn-list">
+        <li>
+          <a href="FelipeDomingos_EN-US.pdf" target="_blank" data-i18n="en_pdf" data-i18n-attr="text">en-us.pdf</a>
+          <div class="meta">
+						<span class="info" data-i18n="last_updated" data-i18n-attr="text">last updated: </span>
+            <span class="info"><!--DATE--></span>
+						<span class="info">| pdf</span>
+          </div>
+        </li>
+        <li>
+          <a href="FelipeDomingos_PT-BR.pdf" target="_blank" data-i18n="pt_pdf" data-i18n-attr="text">pt-br.pdf</a>
+          <div class="meta">
+						<span class="info" data-i18n="last_updated" data-i18n-attr="text">last updated: </span>
+            <span class="info"><!--DATE--></span>
+						<span class="info">| pdf</span>
+          </div>
+        </li>
+				<li>
+          <a href="https://www.linkedin.com/in/domingosfelipe" target="_blank" data-i18n="linkedin" data-i18n-attr="text">
+						Check out my Linkedin
+					</a>
+					<div class="meta">
+						<span class="info">linkedin | profile</span>
+					</div>
+        </li>
+        <li>
+          <a href="https://github.com/domingosfelipe" target="_blank" data-i18n="github" data-i18n-attr="text">
+						Check out my GitHub
+					</a>
+					<div class="meta">
+						<span class="info">github | profile</span>
+					</div>
+        </li>
+        <li>
+          <a href="https://gist.github.com/domingosfelipe" target="_blank" data-i18n="gists" data-i18n-attr="text">
+						Check out my Gists
+					</a>
+					<div class="meta">
+						<span class="info">github |</span>
+						<span class="info">repository |</span>
+						<a class="info" href="https://gist.github.com/domingosfelipe/f39534dd38cc85d66c2008432aac74f2" target="_blank">latex advanced guide |</a>
+						<a class="info" href="https://gist.github.com/domingosfelipe/d46655134a41cf8ad320e189f39ce6dc" target="_blank">conventional commits guide</a>
+					</div>
+        </li>
+				<li>
+          <a href="https://www.linkedin.com/learning/certificates/3781e6e11a2fe389fcb48387012853f893c2bdbc3decd7c57790c2c850c316be?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BNtSmozKQS1uD4asEwfozVQ%3D%3D" target="_blank" data-i18n="github_certificate" data-i18n-attr="text">
+						Career Essentials in GitHub Professional
+					</a>
+					<div class="meta">
+						<span class="info">certificate</span>
+					</div>
+        </li>
+				<li>
+          <a href="https://www.linkedin.com/learning/certificates/bd30b94ff1b980132e44f68668e4a1c56b9fddb10832c9c01d9d65ce7d2b9c62?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B9%2BwYRCHTTUCitAqJNOtDnA%3D%3D" target="_blank" data-i18n="docker_certificate" data-i18n-attr="text">
+						Docker Foundations Professional
+					</a>
+					<div class="meta">
+						<span class="info">certificate</span>
+					</div>
+        </li>
+      </ol>
+    </div>
   </div>
-
-  <hr/>
-
-  <h1 data-i18n="page_title">Resumes — Felipe Domingos</h1>
-  <ul>
-    <li>
-      <a href="FelipeDomingos_EN-US.pdf" data-i18n="en_pdf" data-i18n-attr="text">en-us.pdf</a>
-      <span class="info" data-i18n="last_updated" data-i18n-attr="text"> last updated:</span>
-      <span class="info"><!--DATE--></span>
-    </li>
-    <li>
-      <a href="FelipeDomingos_PT-BR.pdf" data-i18n="pt_pdf" data-i18n-attr="text">pt-br.pdf</a>
-      <span class="info" data-i18n="last_updated" data-i18n-attr="text"> last updated:</span>
-      <span class="info"><!--DATE--></span>
-    </li>
-  </ul>
-  
-  <h1 data-i18n="more">More</h1>
-  <ul>
-    <li>
-      <a href="https://www.linkedin.com/in/domingosfelipe/" target="_blank" data-i18n="linkedin" data-i18n-attr="text">Check out my Linkedin</a>
-    </li>
-    <li>
-      <a href="https://github.com/domingosfelipe" target="_blank" data-i18n="github" data-i18n-attr="text">Check out my GitHub</a>
-    </li>
-    <li>
-      <a href="https://gist.github.com/domingosfelipe" target="_blank" data-i18n="gists" data-i18n-attr="text">Check out my Gists</a>
-    </li>
-  </ul>
-  <hr/>
-
+	<footer> 
+		<div>
+			<span data-i18n="github_pages" data-i18n-attr="text">
+				This site was built using
+			</span>
+			<a href="https://pages.github.com" target="_blank">
+				GitHub Pages
+			</a>
+			<span> | </span>
+			<span data-i18n="github_page_repo" data-i18n-attr="text">
+				View site source in
+			</span>
+			<a href="https://github.com/domingosfelipe/resume" target="_blank">
+				GitHub
+			</a>
+		</div>
+	</footer>
+	<footer id="footer-time"></footer>
   <script>
     (function () {
       const t = {
         en: {
-          page_title: "Resumes — Felipe Domingos",
-          more: "More",
-          en_pdf: "en-us.pdf",
-          pt_pdf: "pt-br.pdf",
-          last_updated: "last updated:",
+          en_pdf: "Resume-FelipeDomingos_EN-US.pdf",
+          pt_pdf: "Resume-FelipeDomingos_PT-BR.pdf",
+          last_updated: "last updated: ",
           linkedin: "Check out my Linkedin",
           github: "Check out my GitHub",
+					github_pages: "This site was built using",
+					github_page_repo: "View site source in",
           gists: "Check out my Gists",
+					github_certificate: "Career Essentials in GitHub Professional",
+					docker_certificate: "Docker Foundations Professional"
         },
         pt: {
-          page_title: "Currículos — Felipe Domingos",
-          more: "Outros links",
-          en_pdf: "Inglês (EN-US).pdf",
-          pt_pdf: "Português (PT-BR).pdf",
-          last_updated: "última atualização:",
-          linkedin: "Veja meu Linkedin",
-          github: "Veja meu GitHub",
-          gists: "Veja meus Gists",
+          en_pdf: "Currículo-FelipeDomingos_EN-US.pdf",
+          pt_pdf: "Currículo-FelipeDomingos_PT-BR.pdf",
+          last_updated: "última atualização: ",
+          linkedin: "Visitar meu Linkedin",
+          github: "Visitar meu GitHub",
+					github_pages: "Este site foi construiído usando",
+					github_page_repo: "Ver código fonte do site no",
+          gists: "Visitar meus Gists",
+					github_certificate: "Career Essentials in GitHub Professional",
+					docker_certificate: "Docker Foundations Professional"
+
         },
       };
 
@@ -116,7 +202,8 @@
       }
 
       document.querySelectorAll("[data-set-lang]").forEach((btn) => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
           const lang = btn.getAttribute("data-set-lang");
           setLang(lang);
         });
@@ -124,6 +211,7 @@
 
       setLang(getLang());
     })();
-  </script>
+		document.getElementById("footer-time").textContent = new Date().toLocaleString();
+	</script>
 </body>
 </html>

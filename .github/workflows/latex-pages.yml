@@ -52,6 +52,7 @@ jobs:
           cp FelipeDomingos_PT-BR.pdf public/FelipeDomingos_PT-BR.pdf
           cp og.png public/og.png
           cp og-pt.png public/og-pt.png || true
+          cp favicon.ico public/favicon.ico || true
           cp index.html public/index.html
 
           BUILD_DATE="$(date -u '+%Y-%m-%d %H:%M UTC')"
